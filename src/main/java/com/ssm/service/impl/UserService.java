@@ -1,5 +1,7 @@
 package com.ssm.service.impl;
 
+import java.util.List;
+
 import javax.annotation.Resource;
 
 import org.springframework.stereotype.Service;
@@ -17,5 +19,20 @@ public class UserService implements IUserService {
     public User getUserById(int userId) {
         return this.userDao.selectByPrimaryKey(userId);
     }
+
+	@Override
+	public int insertUser(User record) {
+		return this.userDao.insertSelective(record);
+	}
+
+	@Override
+	public List<User> list() {
+		return this.userDao.list();
+	}
+
+	@Override
+	public long size() {
+		return this.userDao.size();
+	}
 
 }

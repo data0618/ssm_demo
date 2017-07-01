@@ -16,6 +16,15 @@
     from user_t
     where id = #{id,jdbcType=INTEGER}
   </select>
+  <select id="size" resultType="long">
+  		select count(1) 
+  		from  user_t;
+  </select>
+  <select id="list" resultMap="BaseResultMap">
+		select 
+		<include refid="Base_Column_List" />
+ 		from user_t
+  </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
     delete from user_t
     where id = #{id,jdbcType=INTEGER}

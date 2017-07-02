@@ -5,5 +5,4 @@
             + path + "/";  
     pageContext.setAttribute("basePath",basePath);    
 %>
-<script type="text/JavaScript" src="/WEB-INF/js/jquery-1.12.4.min.js"></script>
 <%@include file="bootstrap.jsp" %>

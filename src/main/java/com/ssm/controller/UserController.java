@@ -7,10 +7,8 @@ import javax.servlet.http.HttpServletRequest;
 
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.stereotype.Controller;
-import org.springframework.test.context.ContextConfiguration;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.servlet.ModelAndView;
 
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
@@ -38,6 +36,16 @@ public class UserController {
 		pagehelper.setPages((int)totalPages);
 		model.addAttribute("pagehelper", pagehelper);
 		return "list";
+	}
+	@RequestMapping("/login")
+	public String login(HttpServletRequest request, Model model) {
+		String userName = request.getParameter("username");
+		String passWord = request.getParameter("password");
+		int count = this.userService.count(userName, passWord);
+		if(count > 0){
+			return "main";
+		}
+		return "add";
 	}
 
 	@RequestMapping("/add")

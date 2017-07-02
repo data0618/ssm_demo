@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<%@ include file="./common/bootstrap.jsp"%>
-<%@ include file="./common/head.jsp"%>
-<%@ include file="./common/tag.jsp"%>
+<%@ include file="common/bootstrap.jsp"%>
+<%@ include file="common/head.jsp"%>
+<%@ include file="common/tag.jsp"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -20,6 +20,7 @@ BODY{
 	overflow: hidden;
 }
 </STYLE>
+<%@ include file="common/navigationBar.jsp"%>
 </head>
 <body>
 <div class="container">
@@ -27,7 +28,7 @@ BODY{
 	<div id="edit_area_div">
 		<div class="col-md-12" align="center">
 		<H1>
-			全部用户信息
+			全部傻逼信息
 		</H1>
 		</div>
 		 

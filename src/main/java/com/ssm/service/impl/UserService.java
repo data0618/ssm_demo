@@ -35,4 +35,9 @@ public class UserService implements IUserService {
 		return this.userDao.size();
 	}
 
+	@Override
+	public int count(String userName, String passWord) {
+		return this.userDao.count(userName, passWord);
+	}
+
 }

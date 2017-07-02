@@ -13,6 +13,8 @@ public interface UserMapper {
     
     long size();
     
+    int count(String userName, String passWord);
+    
     User selectByPrimaryKey(Integer id);
     
     List<User> list();

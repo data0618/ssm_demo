@@ -20,6 +20,15 @@
   		select count(1) 
   		from  user_t;
   </select>
+  <select id="count" resultType="int">
+  		select count(1) 
+  		from  user_t
+  		where 
+  		user_name = #{0,jdbcType=VARCHAR}
+  		and
+  		password = #{1,jdbcType=VARCHAR}
+  		;
+  </select>
   <select id="list" resultMap="BaseResultMap">
 		select 
 		<include refid="Base_Column_List" />

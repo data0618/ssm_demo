@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<%@ include file="./common/bootstrap.jsp"%>
-<%@ include file="./common/head.jsp"%>
-<%@ include file="./common/tag.jsp"%>
+<%@ include file="common/bootstrap.jsp"%>
+<%@ include file="common/head.jsp"%>
+<%@ include file="common/tag.jsp"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -10,19 +10,15 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>注册</title>
 <STYLE type="text/css">
-body{
-	margin:100px;
-	background-color: #FFFFB9
-}
 #inputDiv{
-	margin:0 auto;
+	margin: auto;
 	padding: 45px 100px;
 	width:500px;
 	height:300px; 
 	background-color: #0FF;
 }
 </STYLE>
-
+<%@ include file="common/navigationBar.jsp"%>
 </head>
 <body>
 <div id="inputDiv" align="center">

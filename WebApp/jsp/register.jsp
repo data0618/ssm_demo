@@ -12,25 +12,29 @@
 <SCRIPT type="text/javascript">
 $(document).ready(function() {
 	$("#submit").click(function() {
-		alert("${validateCode}");
-		return false;
+		var text = $("#securityCode").val();
+		if("${validateCode}" == text){
+			return true;		
+		}else{
+			return false;
+		}
 	});
 });
 </SCRIPT>
 <body>
-	<form method="get" action="validate">
+	<form action="validate" method="get" >
 		<button type="button" class="btn btn-default btn-lg active">点击获取验证码</button>
 	</form>
-	<form class="form-inline">
+	<form class="form-inline" action="result">
 		<div class="form-group">
 			<label class="sr-only">请输入验证码</label>
 		</div>
-		<div class="form-group">
-			<label for="inputPassword2" class="sr-only"></label> <input
-				type="password" class="form-control" id="inputPassword2"
-				placeholder="Password">
-		</div>
-		<button id="submit" type="submit" class="btn btn-default">提交</button>
+		<div class="input-group">
+      		<input type="text" class="form-control" id="securityCode" placeholder="验证码"></input>
+      		<span class="input-group-btn">
+        	<button class="btn btn-default" id="submit" type="submit">提交</button>
+      		</span>
+    	</div><!-- /input-group -->
 	</form>
 </body>
 </html>

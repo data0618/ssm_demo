@@ -9,6 +9,7 @@ import org.apache.commons.lang3.StringUtils;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
@@ -38,14 +39,20 @@ public class UserController {
 		return "list";
 	}
 	@RequestMapping("/login")
-	public String login(HttpServletRequest request, Model model) {
-		String userName = request.getParameter("username");
-		String passWord = request.getParameter("password");
-		int count = this.userService.count(userName, passWord);
+	public String login(HttpServletRequest request, Model model,@RequestParam String username, @RequestParam String password ) {
+		int count = this.userService.count(username, password);
 		if(count > 0){
+			request.getSession().setAttribute("sessionUser", username);
 			return "main";
 		}
-		return "add";
+		request.getSession().setAttribute("sessionUser", null);
+		return "redirect:/";
+	}
+	
+	@RequestMapping("/logout")
+	public String logout(HttpServletRequest request){
+		request.getSession().removeAttribute("sessionUser");
+		return "redirect:/";
 	}
 
 	@RequestMapping("/add")

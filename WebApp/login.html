@@ -257,29 +257,13 @@ a {
 	z-index: -10;
 }
 
-@
--webkit-keyframes cloud { 0%{
-	background-position: top left
+@-webkit-keyframes cloud { 
+	0%	{	background-position: top left}
+	100%{	background-position: top right}
 }
-
-100%{
-background-position
-:top
- 
-right
-}
-}
-@
--moz-keyframes clouds { 0%{
-	background-position: top left
-}
-
-100%{
-background-position
-:top
- 
-right
-}
+@-moz-keyframes clouds { 
+	0%	{	background-position: top left}
+	100%{	background-position: top right}
 }
 #err {
 	display: none;
@@ -311,7 +295,7 @@ right
 #validcode {
 	display: inline-block;
 	width: 100px;
-	height: 30px;
+	height: 40px;
 	margin-left: 5px;
 	vertical-align: middle;
 }
@@ -340,7 +324,7 @@ right
 				<li id="verifyCode" style="display: block;"><input id="valid"
 					name="rand" placeholder="请输入验证码" maxlength="4"> <span
 					id="validcode"> <img id="verifyCodePic" id="img_captcha"
-						src="/imgs/jcaptcha.jpg">
+						src="imgs/jcaptcha1.jpg">
 				</span> <span id="changeimg"> 换一张 </span></li>
 				<li><button id="login">立即登录</button></li>
 				<li><span id="err" style="display: inline-block;">密码错误</span></li>
@@ -374,14 +358,17 @@ right
 				}
 				var code = $("#valid").val().toLocaleLowerCase();
 				code = $.trim(code);
-				if (code.length < 4) {
+				if (code=="uwv6"||code=="jgmj"||code=="kjzr") {
+					return true;
+				}else{
 					$("#err").css("display", "inline-block");
 					$("#err").text("验证码错误");
 					return false;
 				}
 			});
 			$('#changeimg').click(function() {
-				$('#verifyCodePic')[0].src = '/jcaptcha.jpg?' + Math.random();
+				var num = Math.floor(Math.random()*3)+1;
+				$('#verifyCodePic')[0].src = 'imgs/jcaptcha'+num+'.jpg';
 				return false;
 			});
 		}

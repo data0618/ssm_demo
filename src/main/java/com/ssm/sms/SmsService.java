@@ -53,7 +53,7 @@ public class SmsService {
     	 if(templateCode != null){
     		 request.setTemplateCode(templateCode);
     	 }else {
-    		 request.setTemplateCode("SMS_75800089");
+    		 request.setTemplateCode("SMS_75855120");
     	 }
 	     //可选:模板中的变量替换JSON串,如模板内容为"亲爱的${name},您的验证码为${code}"时,此处的值为
     	 if(jsonString != null){

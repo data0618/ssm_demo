@@ -54,6 +54,7 @@
     		<mvc:mapping path="/act/**"/>
     		<!-- 排除登录相关的请求路径-->
 			<mvc:exclude-mapping path="/act/validate"/>
+			<mvc:exclude-mapping path="/user/logout"/>
 			<mvc:exclude-mapping path="/user/login"/>
 			<!-- 拦截器类的路径地址 -->
 			<bean class="com.ssm.session.SessionInterceptor"/>

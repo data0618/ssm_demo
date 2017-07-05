@@ -11,6 +11,7 @@
 			<ul class="nav navbar-nav">
 				<li><a href="list">全部</a></li>
 				<li><a href="add">新增</a></li>
+				<li><a href="logout">退出</a></li>
 				 <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                     Java <b class="caret"></b>

@@ -24,7 +24,7 @@ public class UserController {
 
 	@RequestMapping("/list")
 	public String list(HttpServletRequest request, Model model) {
-		int pageSize = StringUtils.isBlank(request.getParameter("pageSize")) ? 10
+		int pageSize = StringUtils.isBlank(request.getParameter("pageSize")) ? 8
 				: Integer.parseInt(request.getParameter("pageSize"));
 		int pageNum = StringUtils.isBlank(request.getParameter("pageNum")) ? 1
 				: Integer.parseInt(request.getParameter("pageNum"));

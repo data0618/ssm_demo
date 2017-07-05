@@ -11,7 +11,7 @@
 <script type="text/javascript">
     $(document).ready(function() { });
     function queryAllPerson(pageNum, pageSize) {
-        $("#edit_area_div").load("<%=basePath%>user/list?pageNum=" + pageNum + "&pageSize=" + pageSize);
+        $("body").load("<%=basePath%>user/list?pageNum=" + pageNum + "&pageSize=" + pageSize);
     }
 </script>
 <title>全部</title>

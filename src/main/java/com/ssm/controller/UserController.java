@@ -11,6 +11,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.alibaba.fastjson.JSONObject;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import com.ssm.pojo.User;
@@ -70,6 +71,13 @@ public class UserController {
 		User user = this.userService.getUserById(userId);
 		model.addAttribute("user", user);
 		return "user";
+	}
+	@RequestMapping("/getUser")
+	public Object getJson(HttpServletRequest request, Model model) {
+		int userId = Integer.parseInt(request.getParameter("id"));
+		User user = this.userService.getUserById(userId);
+		JSONObject jsonObject = (JSONObject) JSONObject.toJSON(user);
+		return jsonObject;
 	}
 
 	@RequestMapping("/addResult")

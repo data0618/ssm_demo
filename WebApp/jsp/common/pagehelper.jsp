@@ -11,9 +11,7 @@
     <ul class="pagination">
         <!-- <li><a href="#">&laquo;</a></li> -->
         <li><a href="javascript:queryAllPerson(${pagehelper.firstPage}, ${pagehelper.pageSize});">首页</a></li>
-        <c:if test="${!pagehelper.isFirstPage}">
-            <li><a href="javascript:queryAllPerson(${pagehelper.prePage}, ${pagehelper.pageSize});">上一页</a></li>
-        </c:if>
+        <li><a href="javascript:queryAllPerson(${pagehelper.prePage}, ${pagehelper.pageSize});">上一页</a></li>
         <c:forEach items="${pagehelper.navigatepageNums}" var="navigatepageNum">
        		 
         	<c:if test="${navigatepageNum-pagehelper.pageNum>-3&&navigatepageNum-pagehelper.pageNum<3
@@ -31,9 +29,7 @@
             </c:if>
            	
         </c:forEach>
-        <c:if test="${!pagehelper.isLastPage}">
-            <li><a href="javascript:queryAllPerson(${pagehelper.nextPage}, ${pagehelper.pageSize});">下一页</a></li>
-        </c:if>
+        <li><a href="javascript:queryAllPerson(${pagehelper.nextPage}, ${pagehelper.pageSize});">下一页</a></li>
         <li><a href="javascript:queryAllPerson(${pagehelper.lastPage}, ${pagehelper.pageSize});">最后一页</a></li>
         <!-- <li><a href="#">&raquo;</a></li> -->
     </ul>

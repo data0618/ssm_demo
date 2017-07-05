@@ -50,10 +50,11 @@
     <mvc:interceptors>
     	<mvc:interceptor>
     		<!-- 拦截路径 -->
-    		<mvc:mapping path="/**"/>
+    		<mvc:mapping path="/user/**"/>
+    		<mvc:mapping path="/act/**"/>
     		<!-- 排除登录相关的请求路径-->
-			<mvc:exclude-mapping path="/act/result"/>
-			<mvc:exclude-mapping path="/login.html"/>
+			<mvc:exclude-mapping path="/act/validate"/>
+			<mvc:exclude-mapping path="/user/login"/>
 			<!-- 拦截器类的路径地址 -->
 			<bean class="com.ssm.session.SessionInterceptor"/>
     	</mvc:interceptor>

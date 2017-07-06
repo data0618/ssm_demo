@@ -16,7 +16,7 @@
 <BR />
 <DIV>
 <FORM action="updateUser" method="post">
-	编号：<input type="text" id="userid" name="id" value="${user.id}" disabled="disabled"></input><BR />
+	编号：<input type="text" id="userid" name="id" value="${user.id}" readonly="readonly"></input><BR />
 	姓名：<input type="text" id="username" name="userName" value="${user.userName}"></input><BR />
 	密码：<input type="text" id="userpassword" name="userPassWord" value="${user.password}"></input><BR />
 	年龄：<input type="text" id="userage" name="userAge" value="${user.age}"></input><BR />

@@ -47,7 +47,7 @@ BODY{
 					<td>${user.userName}</td>
 					<td>${user.password}</td>
 					<td>${user.age}</td>
-					<td><A href="showUser?id=${user.id}">修改</A></td>
+					<td><A class="btn btn-default" href="showUser?id=${user.id}" role="button">修改</A></td>
 				</tr>
 	        </c:forEach>
 		</table>

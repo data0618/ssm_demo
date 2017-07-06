@@ -9,9 +9,10 @@ import org.apache.commons.lang3.StringUtils;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.alibaba.fastjson.JSONObject;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import com.ssm.pojo.User;
@@ -72,12 +73,12 @@ public class UserController {
 		model.addAttribute("user", user);
 		return "user";
 	}
-	@RequestMapping("/getUser")
-	public Object getJson(HttpServletRequest request, Model model) {
+	@ResponseBody
+	@RequestMapping(value="getUser", method=RequestMethod.POST,produces="application/json;charset=UTF-8")
+	public User getJson(HttpServletRequest request, Model model) {
 		int userId = Integer.parseInt(request.getParameter("id"));
 		User user = this.userService.getUserById(userId);
-		JSONObject jsonObject = (JSONObject) JSONObject.toJSON(user);
-		return jsonObject;
+		return user;
 	}
 
 	@RequestMapping("/addResult")

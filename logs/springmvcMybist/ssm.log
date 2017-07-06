@@ -22,3 +22,13 @@
 [INFO] [2017-06-29 22:24:51][org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor]JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
 [INFO] [2017-06-29 22:24:53][com.ssm.test.TestMyBatis]{"age":24,"id":1,"password":"123456","userName":"æµ‹è¯•"}
 [INFO] [2017-06-29 22:24:53][org.springframework.context.support.GenericApplicationContext]Closing org.springframework.context.support.GenericApplicationContext@531be3c5: startup date [Thu Jun 29 22:24:50 CST 2017]; root of context hierarchy
+[INFO] [2017-07-05 15:10:56][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [spring-mybatis.xml]
+[INFO] [2017-07-05 15:10:56][org.springframework.context.support.GenericApplicationContext]Refreshing org.springframework.context.support.GenericApplicationContext@29774679: startup date [Wed Jul 05 15:10:56 CST 2017]; root of context hierarchy
+[INFO] [2017-07-05 15:10:56][org.springframework.beans.factory.config.PropertyPlaceholderConfigurer]Loading properties file from class path resource [jdbc.properties]
+[INFO] [2017-07-05 15:10:56][org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor]JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+[INFO] [2017-07-05 15:10:57][org.springframework.context.support.ClassPathXmlApplicationContext]Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@7c711375: startup date [Wed Jul 05 15:10:57 CST 2017]; root of context hierarchy
+[INFO] [2017-07-05 15:10:57][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [spring-mybatis.xml]
+[INFO] [2017-07-05 15:10:57][org.springframework.beans.factory.config.PropertyPlaceholderConfigurer]Loading properties file from class path resource [jdbc.properties]
+[INFO] [2017-07-05 15:10:57][org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor]JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+[INFO] [2017-07-05 15:10:58][com.ssm.test.TestMyBatis]{"age":24,"id":1,"password":"123456","userName":"²âÊÔ"}
+[INFO] [2017-07-05 15:10:58][org.springframework.context.support.GenericApplicationContext]Closing org.springframework.context.support.GenericApplicationContext@29774679: startup date [Wed Jul 05 15:10:56 CST 2017]; root of context hierarchy

@@ -15,16 +15,23 @@
 function query() {
 	//向后台发送处理数据
     $.ajax({
-    	type: "GET", //用POST方式传输
+    	type: "post", //用POST方式传输
     	dataType: "json", //数据格式:JSON
     	url: 'getUser', //目标地址
-   		data: {"id":"1"}, //{foo:["bar1", "bar2"]}
+   		data: {"id":$("#queryId").val()}, //{foo:["bar1", "bar2"]}
    		error: function (XMLHttpRequest, textStatus, errorThrown) { 
 	   		 alert(XMLHttpRequest.status);
 	         alert(XMLHttpRequest.readyState);
 	         alert(textStatus);
    		},
-    	success: function (msg){ alert(msg);}
+    	success: function (data){
+			if(data!=null){
+				$("#userid").val(data.id);
+				$("#username").val(data.userName);
+				$("#userpassword").val(data.password);
+				$("#userage").val(data.age);
+			}
+    	}
     });
 }
 </SCRIPT>
@@ -35,6 +42,11 @@ src="//music.163.com/outchain/player?type=2&id=27403811&auto=1&height=66">
 </iframe>
 <BR />
 <DIV>
+	编号：<input type="text" id="userid" value=""></input><BR />
+	姓名：<input type="text" id="username" value=""></input><BR />
+	密码：<input type="text" id="userpassword" value=""></input><BR />
+	年龄：<input type="text" id="userage" value=""></input><BR />
+	输入查询编号：<input type="text" id="queryId" value="1"></input>
 	<BUTTON onclick="query()">查询</BUTTON>
 </DIV>
 </DIV>

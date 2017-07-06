@@ -11,5 +11,5 @@ public interface IUserService {
     public List<User> list();
     public long size();
     public int count(String userName, String passWord);
-    
+    public int updateByPrimaryKey(User record);
 }

@@ -40,4 +40,9 @@ public class UserService implements IUserService {
 		return this.userDao.count(userName, passWord);
 	}
 
+	@Override
+	public int updateByPrimaryKey(User record) {
+		return this.userDao.updateByPrimaryKeySelective(record);
+	}
+
 }

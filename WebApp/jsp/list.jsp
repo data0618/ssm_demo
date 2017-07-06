@@ -39,6 +39,7 @@ BODY{
 	  			<th>用户名</th>
 	  			<th>密码</th>
 	  			<th>年龄</th>
+	  			<th>操作</th>
 	  		</tr>
 	  		<c:forEach var="user" items="${pagehelper.list }" >
 				<tr>
@@ -46,6 +47,7 @@ BODY{
 					<td>${user.userName}</td>
 					<td>${user.password}</td>
 					<td>${user.age}</td>
+					<td><A href="showUser?id=${user.id}">修改</A></td>
 				</tr>
 	        </c:forEach>
 		</table>

@@ -66,12 +66,27 @@ public class UserController {
 		return "main";
 	}
 
+	@RequestMapping("/updateUser")
+	public String update(HttpServletRequest request, Model model) {
+		User user = new User();
+		int userId = Integer.parseInt(request.getParameter("id"));
+		String userName = request.getParameter("userName");
+		String userPassWord = request.getParameter("userPassWord");
+		int userAge = Integer.parseInt(request.getParameter("userAge"));
+		user.setId(userId);
+		user.setUserName(userName);
+		user.setPassword(userPassWord);
+		user.setAge(userAge);
+		int status = this.userService.updateByPrimaryKey(user);
+		model.addAttribute("status", status);
+		return "addResult";
+	}
 	@RequestMapping("/showUser")
-	public String toIndex(HttpServletRequest request, Model model) {
+	public String showUser(HttpServletRequest request, Model model) {
 		int userId = Integer.parseInt(request.getParameter("id"));
 		User user = this.userService.getUserById(userId);
 		model.addAttribute("user", user);
-		return "user";
+		return "showUser";
 	}
 	@ResponseBody
 	@RequestMapping(value="getUser", method=RequestMethod.POST,produces="application/json;charset=UTF-8")

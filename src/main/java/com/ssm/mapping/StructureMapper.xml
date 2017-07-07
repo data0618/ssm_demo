@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.ssm.dao.StructureMapper" >
+    
+    
+    
+  <select id="searchAllDepartment" resultType="Department">
+      SELECT id, department FROM department 
+  </select>
+  
+  <select id="searchUserByDepartment" resultType="User">
+      SELECT id, user_name as userName FROM user_t WHERE department = #{deptId}
+  </select>
+  
+  <select id="searchUserById" resultType="UserDetail">
+      SELECT 
+          u.user_name as userName,
+          u.age,
+          r.role,
+          GROUP_CONCAT(o.operation) operation
+      FROM user_t u
+      LEFT JOIN user_role ur  ON ur.user_id = u.id
+      LEFT JOIN role r  ON ur.role_id = r.role_id
+      LEFT JOIN role_operation ro  ON ur.role_id = ro.role_id
+      LEFT JOIN operation o  ON FIND_IN_SET(o.id, ro.operation)
+      WHERE u.id = #{userId}
+      GROUP BY u.id
+  </select>
+  
+</mapper>

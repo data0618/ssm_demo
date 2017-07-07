@@ -1,8 +1,8 @@
 package com.ssm.controller;
 
-import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 
+import org.apache.log4j.Logger;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -14,6 +14,7 @@ import com.ssm.util.SecurityCode;
 @RequestMapping("/act")
 public class ActionController {
 	
+	private static final Logger logger  = Logger.getLogger(ActionController.class);
 	@RequestMapping("/validate")
 	public String list(HttpServletRequest request, Model model) {
 		String code = new SecurityCode().generateSecurityCode(4);

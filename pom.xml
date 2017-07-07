@@ -96,11 +96,6 @@
 			<artifactId>c3p0</artifactId>
 			<version>0.9.1.2</version>
 		</dependency>
-		<dependency>
-			<groupId>com.alibaba</groupId>
-			<artifactId>fastjson</artifactId>
-			<version>1.2.17</version>
-		</dependency>
 		<!-- 导入dbcp的jar包，用来在applicationContext.xml中配置数据库 -->
 		<dependency>
 			<groupId>commons-dbcp</groupId>
@@ -176,6 +171,21 @@
 			<artifactId>jlayer</artifactId>
 			<version>1.0.1</version>
 		</dependency>
+		<!-- <dependency>
+            <groupId>sdkcore</groupId>
+            <artifactId>sdkcore</artifactId>
+            <version>1.0</version>
+            <scope>system</scope>
+            <systemPath>${project.basedir}/src/main/WebAp/WEB-INF/lib/aliyun-java-sdk-core-3.2.3.jar</systemPath>
+        </dependency>
+		<dependency>
+            <groupId>dysmsapi</groupId>
+            <artifactId>dysmsapi</artifactId>
+            <version>1.0</version>
+            <scope>system</scope>
+            <systemPath>${project.basedir}/src/main/WebApp/WEB-INF/lib/aliyun-java-sdk-dysmsapi-1.0.0-SNAPSHOT.jar</systemPath>
+        </dependency> -->
+		
 	</dependencies>
 	<build>
 		<finalName>chat</finalName>

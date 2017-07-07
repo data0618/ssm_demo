@@ -26,6 +26,7 @@
                     <li><a href="#">另一个分离的链接</a></li>
                 </ul>
            		 </li>
+           		 <li><a href="structure">组织结构</a></li>
 			</ul>
 		</div>
 	</div>
